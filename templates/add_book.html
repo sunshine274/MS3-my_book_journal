@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="light-green-text text-darken-1 center-align">Add Books</h3>
+
+<div class="row">
+  <form class="col s12" method="POST" action="">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="fas fa-user-circle prefix light-green-text text-darken-1"></i>
+        <input placeholder="Placeholder"
+          id="first_name"
+          type="text"
+          class="validate" required
+        />
+        <label for="first_name">Author</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+      <i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+        <input id="last_name" type="text" class="validate" required/>
+        <label for="last_name">Book Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+      <i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Textarea</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
