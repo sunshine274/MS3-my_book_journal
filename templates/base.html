@@ -25,7 +25,7 @@
        <li><a href="{{ url_for('login') }}">Log In</a></li>
        <li><a href="#">Log Out</a></li>
        <li><a href="#">Community</a></li>
-       <li><a href="#">My Lists</a></li>
+       <li><a href="{{ url_for('my_lists', username=session['user']) }}">My Lists</a></li>
        <li><a href="#">New Book</a></li>
        <li><a href="#">Manage Lists</a></li>
       </ul>
@@ -40,7 +40,7 @@
        <li><a href="{{ url_for('login') }}">Log In</a></li>
        <li><a href="#">Log Out</a></li>
        <li><a href="#">Community</a></li>
-       <li><a href="#">My Lists</a></li>
+       <li><a href="{{ url_for('my_lists', username=session['user']) }}">My Lists</a></li>
        <li><a href="#">New Book</a></li>
        <li><a href="#">Manage Lists</a></li>
   </ul>
