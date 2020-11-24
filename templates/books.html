@@ -1,27 +1,27 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-{% for book in books %}
-{{ book.list_name }}<br>
-{{ book.book_name }}<br>
-{{ book.author }}<br>
-{{ book.keyword }}<br>
-{{ book.description }}<br>
-{% endfor %}
+<h3 class="light-green-text text-darken-1 center-align">All Books</h3>
 
 <ul class="collapsible">
-{% for book in books %}
-    <li>
-      <div class="collapsible-header white-text light-green darken-1"><i class="fas fa-caret-down"></i>
-      <strong>{{ book.book_name }} by {{ book.author }}</strong>
+  {% for book in books %}
+  <li>
+    <div class="collapsible-header white-text light-green darken-1">
+      <div class="col s3">
+        <i class="fas fa-caret-down"></i>
+        <a href="" class="btn-small grey accent-2">Delete</a>
+        <a href="" class="btn-small yellow darken-2">Edit</a>
       </div>
+      <div class="col s9">
+        <strong> {{ book.book_name }} by {{ book.author }}</strong>
+      </div>
+    </div>
       <div class="collapsible-body">
-      <strong>on the list of {{ book.list_name }}</strong>
-      <p>{{ book.description }}</p>
-      <p><em>by: {{ book.created_by }}</em></p>
+        <strong>on the list of {{ book.list_name }}</strong>
+        <p>{{ book.description }}</p>
+        <p><em>by: {{ book.created_by }}</em></p>
       </div>
-    </li>
-    {% endfor %}
-  </ul>
+  </li>
+  {% endfor %}
+</ul>
 
 {% endblock%}
