@@ -16,8 +16,9 @@
       <strong>{{ book.book_name }} by {{ book.author }}</strong>
       </div>
       <div class="collapsible-body">
-      <strong>on {{ book.list_name }}</strong>
+      <strong>on the list of {{ book.list_name }}</strong>
       <p>{{ book.description }}</p>
+      <p><em>by: {{ book.created_by }}</em></p>
       </div>
     </li>
     {% endfor %}
