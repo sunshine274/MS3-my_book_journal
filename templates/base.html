@@ -25,7 +25,9 @@
         {% if session.user %}
        <li><a href="{{ url_for('my_lists', username=session['user']) }}">My Lists</a></li>
        <li><a href="{{ url_for('add_book') }}">New Book</a></li>
-       <li><a href="#">Manage Lists</a></li>
+       {% if session.user|lower == "admin"|lower %}
+       <li><a href="{{ url_for('get_lists') }}">Manage Lists</a></li>
+       {% endif %}
        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
        {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -43,7 +45,9 @@
         {% if session.user %}
        <li><a href="{{ url_for('my_lists', username=session['user']) }}">My Lists</a></li>
        <li><a href="{{ url_for('add_book') }}">New Book</a></li>
-       <li><a href="#">Manage Lists</a></li>
+       {% if session.user|lower == "admin"|lower %}
+       <li><a href="{{ url_for('get_lists') }}">Manage Lists</a></li>
+       {% endif %}
        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
        {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>

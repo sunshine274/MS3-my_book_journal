@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-green-text text-darken-1 center-align">Manage Lists</h3>
+
+ <div class="row">
+ {% for list in lists %}
+    <div class="col s12 m3">
+      <div class="card light-green center-align darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ list.list_name }}</span>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn green accent-4">Edit</a>
+          <a href="#" class="btn light-green">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
