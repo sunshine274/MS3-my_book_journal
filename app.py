@@ -114,6 +114,7 @@ def add_book():
             "author": request.form.get("author"),
             "keyword": request.form.get("keyword"),
             "description": request.form.get("description"),
+            "book_image": request.form.get("book_image"),
             "created_by": session["user"]
         }
         mongo.db.books.insert_one(book)
