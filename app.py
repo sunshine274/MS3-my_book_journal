@@ -162,6 +162,20 @@ def add_list():
     return render_template("add_list.html")
 
 
+@app.route("/edit_list/<list_id>", methods=["GET", "POST"])
+def edit_list(list_id):
+    if request.method == "POST":
+        submit = {
+            "list_name": request.form.get("list_name")
+        }
+        mongo.db.lists.update({"_id": ObjectId(list_id)}, submit)
+        flash("List successfully updated")
+        return redirect(url_for("get_lists"))
+    
+    list = mongo.db.lists.find_one({"_id": ObjectId(list_id)})
+    return render_template("edit_list.html", list=list)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

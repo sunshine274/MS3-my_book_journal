@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<h3 class="light-green-text text-darken-1 center-align">Edit List</h3>
+
+<div class="row card-panel light-grey">
+	<form class="col s12" method="POST" action="{{ url_for('edit_list', list_id=list._id)}}">
+    <!-- list name -->
+        <div class="row">
+		<div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-green-text text-darken-1"></i>
+            <input id="list_name" name="list_name" value="{{ list.list_name }}" type="text" minlength="2" maxlength="25" class="validate" required/>
+            <label for="list_name">List Name</label>
+        </div>
+        </div>
+		
+        <div class="row">
+        <div class="col s12 center-align">
+        <a href="{{ url_for('get_lists') }}" class="btn-large red">
+        Cancel <i class="fas fa-times-circle"></i> </a>
+        <button type="submit" class="btn-large light-green darken-1">
+        Edit list <i class="fas fa-editright"></i>
+        </button>
+        </div>
+        </div>
+	</form>
+</div>
+
+{% endblock %}
