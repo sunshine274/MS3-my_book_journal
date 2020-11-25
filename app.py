@@ -149,6 +149,19 @@ def get_lists():
     return render_template("lists.html", lists=lists)
 
 
+@app.route("/add_list", methods=["GET", "POST"])
+def add_list():
+    if request.method == "POST":
+        list = {
+            "list_name": request.form.get("list_name")
+        }
+        mongo.db.lists.insert_one(list)
+        flash("New list added")
+        return redirect(url_for("get_lists"))
+    
+    return render_template("add_list.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
