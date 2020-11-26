@@ -90,9 +90,10 @@ def my_lists(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    book = mongo.db.books.find_one()
 
     if session["user"]:
-        return render_template("my_lists.html", username=username)
+        return render_template("my_lists.html", username=username, book=book)
 
     return redirect(url_for("login"))
 
