@@ -21,18 +21,33 @@
     <label for="list_name">Book List</label>
   </div>
     </div>
+		
 		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+				<input id="book_name" name="book_name" value="{{ book.book_name }}" minlength="5" maxlength="50" type="text" class="validate" required/>
+				<label for="book_name">Book Name</label>
+			</div>
+		</div>
+        <div class="row">
 			<div class="input-field col s12">
 				<i class="fas fa-user-circle prefix light-green-text text-darken-1"></i>
 				<input id="author" name="author" type="text" class="validate" value="{{ book.author }}" required/>
 				<label for="author">Author</label>
 			</div>
 		</div>
-		<div class="row">
+        <div class="row">
 			<div class="input-field col s12">
 				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
-				<input id="book_name" name="book_name" value="{{ book.book_name }}" minlength="5" maxlength="50" type="text" class="validate" required/>
-				<label for="book_name">Book Name</label>
+				<input id="keywords" name="keywords" type="text" value="{{ book.keywords }}" class="validate" required/>
+				<label for="keywords">Keywords</label>
+			</div>
+		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+				<input id="book_image" name="book_image" type="text" value="{{ book.book_image }}"/>
+				<label for="book_image">Book Image</label>
 			</div>
 		</div>
 		<div class="row">

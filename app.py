@@ -112,7 +112,7 @@ def add_book():
             "list_name": request.form.get("list_name"),
             "book_name": request.form.get("book_name"),
             "author": request.form.get("author"),
-            "keyword": request.form.get("keyword"),
+            "keywords": request.form.get("keywords"),
             "description": request.form.get("description"),
             "book_image": request.form.get("book_image"),
             "created_by": session["user"]
@@ -132,12 +132,14 @@ def edit_book(book_id):
             "list_name": request.form.get("list_name"),
             "book_name": request.form.get("book_name"),
             "author": request.form.get("author"),
-            "keyword": request.form.get("keyword"),
+            "keywords": request.form.get("keywords"),
             "description": request.form.get("description"),
+            "book_image": request.form.get("book_image"),
             "created_by": session["user"]
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book successfully updated!")
+        return redirect(url_for("browse_books"))
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     lists = mongo.db.lists.find().sort("list_name", 1)
