@@ -47,39 +47,101 @@
   </head>
   <body>
     <header>
-      <!-- top navbar -->
-      <nav class="nav-extended-lg navbar navbar-light bg-light">
-        <a href="{{ url_for('browse_books') }}" class="navbar-brand"
-          >My Book Journal</a
-        >
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- navbar -->
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{ url_for('browse_books') }}">My Book Journal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a href="{{ url_for('browse_books') }}">Home</a>
+      <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('browse_books') }}">Home</a>
             </li>
             {% if session.user %}
             <li class="nav-item">
-              <a href="{{ url_for('my_lists', username=session['user']) }}"
+              <a class="nav-link" href="{{ url_for('my_lists', username=session['user']) }}"
                 >My Lists</a
               >
             </li>
             <li class="nav-item">
-              <a href="{{ url_for('add_book') }}">New Book</a>
+              <a class="nav-link" href="{{ url_for('add_book') }}">New Book</a>
             </li>
             {% if session.user|lower == "admin"|lower %}
             <li class="nav-item">
-              <a href="{{ url_for('get_lists') }}">Manage Lists</a>
+              <a class="nav-link" href="{{ url_for('get_lists') }}">Manage Lists</a>
             </li>
             {% endif %}
             <li class="nav-item">
-              <a href="{{ url_for('logout') }}">Log Out</a>
+              <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a href="{{ url_for('register') }}">Register</a>
+              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
             </li>
             <li class="nav-item">
-              <a href="{{ url_for('login') }}">Log In</a>
+              <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+            </li>
+            {% endif %}
+          </ul>
+          <form
+            action="{{ url_for('search') }}"
+            method="POST"
+            class="form-inline my-2 my-lg-0"
+          >
+            <input
+              type="search"
+              name="query"
+              id="query"
+              class="form-control mr-sm-2 validate"
+              placeholder="search books"
+              aria-label="Search"
+              required
+            />
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
+              Search
+            </button>
+          </form>
+        </div>
+</nav>
+      
+
+      <!-- 
+      <nav class="nav-extended-lg navbar navbar-light bg-light text-secondary">
+        <a href="{{ url_for('browse_books') }}" class="navbar-brand"
+          >My Book Journal</a>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('browse_books') }}">Home</a>
+            </li>
+            {% if session.user %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('my_lists', username=session['user']) }}"
+                >My Lists</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('add_book') }}">New Book</a>
+            </li>
+            {% if session.user|lower == "admin"|lower %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('get_lists') }}">Manage Lists</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
             </li>
             {% endif %}
           </ul>
@@ -103,22 +165,31 @@
           </form>
         </div>
       </nav>
+
+      -->
+
     </header>
 
     <section>
       <!-- flash messages -->
-      {% with messages = get_flashed_messages() %} {% if messages %} {% for
-      message in messages %}
+      {% with messages = get_flashed_messages() %} 
+      {% if messages %} 
+      {% for message in messages %}
       <div class="container">
         <div class="row alert-success">
           <h4 class="light-green darken-1 center-align">{{ message }}</h4>
         </div>
       </div>
 
-      {% endfor %} {% endif %} {% endwith %}
+      {% endfor %} 
+      {% endif %} 
+      {% endwith %}
     </section>
 
-    <main class="container">{% block content %} {% endblock %}</main>
+    <main class="container">
+    {% block content %} 
+    {% endblock %}
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -131,6 +202,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %} {% endblock %}
+    {% block scripts %} 
+    {% endblock %}
   </body>
 </html>

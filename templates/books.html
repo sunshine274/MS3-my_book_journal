@@ -10,16 +10,13 @@
 <div class="container">
 <div class="row">
 {% for book in books %}
-  <div class="col col-sm col-md">
+  <div class="col col-sm col-md-3">
     <div class="card">
-        <img src="{{ book.book_image }}" />
+        <img src="{{ book.book_image }}" class="img-fluid" alt="Responsive image" />
       <div class="card-body">
-        <span class="card-title grey-text text-darken-4"
-          >{{ book.book_name }}<i class="material-icons right"></i
-        ></span>
-        <p>{{ book.keywords }}</p>
+        <h5 class="card-title">{{ book.book_name }}</h5>
+        <p>Author : {{ book.author }}</p>
         <p><em>added by: {{ book.created_by| capitalize }}</em></p>
-        <p>{{ book.description }}</p>
         {% if session.user|lower == book.created_by|lower %}
         <a
           href="{{ url_for('delete_book', book_id=book._id)}}"
