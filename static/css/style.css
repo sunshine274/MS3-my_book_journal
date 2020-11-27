@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+
 .heading {
 color: green;
 margin: 0 auto;
+font-family: 'Castoro', serif;
+}
+
+.image-size{
+    object-fit:cover; 
+    overflow:hidden;
 }

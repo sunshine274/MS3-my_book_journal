@@ -12,7 +12,7 @@
 {% for book in books %}
   <div class="col col-sm col-md-3">
     <div class="card">
-        <img src="{{ book.book_image }}" class="img-fluid" alt="Responsive image" />
+        <img src="{{ book.book_image }}" class="img-fluid image-size" onerror="this.src='static/images/default_img.png';this.classname='image-size'"/>
       <div class="card-body">
         <h5 class="card-title">{{ book.book_name }}</h5>
         <p>Author : {{ book.author }}</p>
