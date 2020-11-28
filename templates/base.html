@@ -106,67 +106,6 @@
           </form>
         </div>
 </nav>
-      
-
-      <!-- 
-      <nav class="nav-extended-lg navbar navbar-light bg-light text-secondary">
-        <a href="{{ url_for('browse_books') }}" class="navbar-brand"
-          >My Book Journal</a>
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('browse_books') }}">Home</a>
-            </li>
-            {% if session.user %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('my_lists', username=session['user']) }}"
-                >My Lists</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('add_book') }}">New Book</a>
-            </li>
-            {% if session.user|lower == "admin"|lower %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('get_lists') }}">Manage Lists</a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
-            </li>
-            {% endif %}
-          </ul>
-          <form
-            action="{{ url_for('search') }}"
-            method="POST"
-            class="form-inline my-2 my-lg-0"
-          >
-            <input
-              type="search"
-              name="query"
-              id="query"
-              class="form-control mr-sm-2 validate"
-              placeholder="search books"
-              aria-label="Search"
-              required
-            />
-            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-
-      -->
 
     </header>
 
@@ -190,6 +129,35 @@
     {% block content %} 
     {% endblock %}
     </main>
+
+
+ <footer class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<p class="copyright text-muted inline-block"> &copy; For Educational Purpose <span id="copyright"></span></p>
+			</div>
+
+			<div class="col-sm-4">
+				<ul class="list-inline social-links">
+					<li class="list-inline-item">
+						<a href="https://www.linkedin.com/in/jingxu274/" target="_blank">
+							<i class="fab fa-linkedin-in" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="https://github.com/sunshine274" target="_blank">
+							<i class="fab fa-github" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="https://www.youtube.com/" target="_blank">
+							<i class="fab fa-youtube-square" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

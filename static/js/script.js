@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $("#copyright").text(new Date().getFullYear());
 
     // select validation 
     validateMaterializeSelect();
