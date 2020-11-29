@@ -18,14 +18,13 @@
 <!-- Jumbotron -->
 
 
-<h3 class="headings">
+<h3 class="headings text-center">
   All Books
 </h3>
 
 
 <!-- book card -->
 {% if books|length > 0 %} 
-<div class="container">
 <!-- card deck-->
 <div class="card-deck row">
 {% for book in books %}
@@ -34,7 +33,7 @@
     <div class="card">
 <!-- card image -->
     <div class="view overlay">
-    <img src="{{ book.book_image }}" class="img-fluid" onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
+    <img src="{{ book.book_image }}" class="img-fluid card-img " onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
      <a href="#!">
      <div class="mask rgba-white-slight"></div>
      </a>
@@ -57,14 +56,14 @@
           >Edit</a
         >
         {% endif %}
-        <a href="#" class="btn btn-primary">details</a>
+        <a href="#" class="btn btn-light-blue btn-md">details</a>
       </div>
     </div>
     <!-- card -->
   </div>
   {% endfor %} 
   <!-- card deck-->
-</div>
+
 
 {% else %}
 <h3 class="text-danger">No Books found</h3>

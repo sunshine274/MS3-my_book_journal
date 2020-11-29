@@ -6,6 +6,25 @@ margin: 0 auto;
 font-family: 'Castoro', serif;
 }
 
+.card {
+    margin: 5% 0%;
+}
+
+.card-img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+.card-body {
+    margin: 0% 0% 0% 3%;
+    padding: 6% 0%;
+}
+
 footer {
   background-color: lightgrey;
   color: white;
