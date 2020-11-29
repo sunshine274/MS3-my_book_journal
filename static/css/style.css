@@ -6,11 +6,6 @@ margin: 0 auto;
 font-family: 'Castoro', serif;
 }
 
-.image-size{
-    object-fit:cover; 
-    overflow:hidden;
-}
-
 footer {
   background-color: lightgrey;
   color: white;

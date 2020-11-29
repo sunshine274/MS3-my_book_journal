@@ -22,15 +22,26 @@
   All Books
 </h3>
 
+
 <!-- book card -->
 {% if books|length > 0 %} 
 <div class="container">
-<div class="row">
+<!-- card deck-->
+<div class="card-deck row">
 {% for book in books %}
-  <div class="col col-sm col-md-4">
+  <div class="col col-xs-12 col-sm-6 col-md-4">
+  <!-- card -->
     <div class="card">
-        <img src="{{ book.book_image }}" class="img-fluid" onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
-      <div class="card-body">
+<!-- card image -->
+    <div class="view overlay">
+    <img src="{{ book.book_image }}" class="img-fluid" onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
+     <a href="#!">
+     <div class="mask rgba-white-slight"></div>
+     </a>
+    </div>
+    <!-- card content -->
+         <div class="card-body">
+         <!-- card title -->
         <h5 class="card-title">{{ book.book_name }}</h5>
         <p>Author : {{ book.author }}</p>
         <p><em>added by: {{ book.created_by| capitalize }}</em></p>
@@ -49,8 +60,10 @@
         <a href="#" class="btn btn-primary">details</a>
       </div>
     </div>
+    <!-- card -->
   </div>
   {% endfor %} 
+  <!-- card deck-->
 </div>
 
 {% else %}
