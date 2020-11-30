@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
 
 .heading {
-color: green;
+color: black;
 margin: 0 auto;
 font-family: 'Castoro', serif;
+font-weight: bold;
 }
 
 .jumbotron {
     background-image: url(https://images.unsplash.com/photo-1495871682630-20d8a7245ef5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
+}
+
+
+
+.book-details-card {
+    display: flex;
+    justify-content: center;
 }
 
 .card-img {
@@ -16,13 +24,14 @@ font-family: 'Castoro', serif;
     position: relative;
     margin: 0;
     width: 100%;
-    height: 20vw;
+    height: 25vw;
     object-fit: cover;
 }
 
 .card-body {
     margin: 0% 0% 0% 3%;
     padding: 6% 0%;
+    height: 20vw;
 }
 
 .add-book-bg {
