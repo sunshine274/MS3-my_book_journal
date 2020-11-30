@@ -163,7 +163,7 @@ def delete_book(book_id):
 @app.route("/get_lists")
 def get_lists():
     lists = list(mongo.db.lists.find().sort("list_name", 1))
-    return render_template("lists.html", lists=lists)
+    return render_template("my_lists.html", lists=lists)
 
 
 @app.route("/add_list", methods=["GET", "POST"])
