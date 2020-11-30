@@ -150,7 +150,7 @@ def edit_book(book_id):
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     lists = mongo.db.lists.find().sort("list_name", 1)
-    return render_template("home.html", book=book, lists=lists)
+    return render_template("edit_book.html", book=book, lists=lists)
 
 
 @app.route("/delete_book/<book_id>")

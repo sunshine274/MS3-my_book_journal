@@ -1,72 +1,101 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-<h3 class="light-green-text text-darken-1 center-align">Edit Books</h3>
 
-<div class="row card-panel light-grey">
-	<form class="col s12" method="POST" action="{{ url_for('edit_book', book_id=book._id)}}">
-    <div class="row">
-		<div class="input-field col s12">
+<div class="container m-4">
+  <h3 class="text-center heading">Edit Book</h3>
 
-    <select id="list_name" name="list_name" class="validate" required>
-      <option value="" disabled selected>Choose List</option>
-      {% for list in lists %}
+  <div class="row center">
+    <form
+      class="col col-xs col-sm col-md-8 needs-validation"
+      method="POST"
+      action="{{ url_for('edit_book', book_id=book._id)}}"
+    >
+      <div class="form-group mb-3">
+        
+          <select
+            id="list_name"
+            name="list_name"
+            class="validate custom-select form-control"
+            required
+          >
+            <option value="" disabled selected>Choose List</option>
+            {% for list in lists %}
       {% if list.list_name == book.list_name %}
       <option value="{{ list.list_name }}" selected>{{ list.list_name }}</option>
       {% else %}
       <option value="{{ list.list_name }}">{{ list.list_name }}</option>
       {% endif %}
       {% endfor %}
-    </select>
-    <label for="list_name">Book List</label>
+          </select>
+        
+      </div>
+
+      <div class="form-group">
+
+        <label for="book_name">Book Name</label>
+        <input
+          id="book_name"
+          name="book_name"
+          type="text"
+          class="validate form-control"
+          value="{{ book.book_name }}"
+          required
+        />
+        
+      </div>
+      <div class="form-group">
+    <label for="author">Author</label>
+        <input
+          id="author"
+          name="author"
+          type="text"
+          class="validate form-control"
+          value="{{ book.author }}"
+          required
+        />
+        
+      </div>
+      <div class="form-group">
+       <label for="keywords">Keywords</label>
+        <input
+          id="keywords"
+          name="keywords"
+          type="text"
+          class="validate form-control"
+          value="{{ book.keywords }}"
+          required
+        />
+        
+      </div>
+      <div class="form-group">
+        <label for="book_image">Image URL</label>
+        <input
+          id="book_image"
+          class="form-control"
+          name="book_image"
+          type="text"
+          value="{{ book.book_image }}"
+          required
+        />
+        
+      </div>
+      <div class="form-group">
+       <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          class="form-control" rows="6"
+          value="{{ book.description }}"
+        ></textarea>
+        
+      </div>
+      <a href="{{ url_for('homepage') }}" class="btn btn-large btn-light">Cancel <i class="fas fa-times-circle"></i></a>
+      <button type="submit" class="btn btn-large btn-light">
+        Edit book <i class="fas fa-plus-square"></i>
+      </button>
+    </form>
   </div>
-    </div>
-		
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
-				<input id="book_name" name="book_name" value="{{ book.book_name }}" minlength="5" maxlength="50" type="text" class="validate" required/>
-				<label for="book_name">Book Name</label>
-			</div>
-		</div>
-        <div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-user-circle prefix light-green-text text-darken-1"></i>
-				<input id="author" name="author" type="text" class="validate" value="{{ book.author }}" required/>
-				<label for="author">Author</label>
-			</div>
-		</div>
-        <div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
-				<input id="keywords" name="keywords" type="text" value="{{ book.keywords }}" class="validate" required/>
-				<label for="keywords">Keywords</label>
-			</div>
-		</div>
-        <div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
-				<input id="book_image" name="book_image" type="text" value="{{ book.book_image }}"/>
-				<label for="book_image">Book Image</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
-				<textarea id="description" name="description" class="materialize-textarea" value="{{ book.description }}">{{- book.description -}}</textarea>
-				<label for="description">Description</label>
-			</div>
-		</div>
-        <div class="row">
-        <div class="col s12 center-align">
-        <!-- cancel button -->
-        <a href="{{ url_for('homepage') }}" class="btn-large red">Cancel <i class="fas fa-times-circle right"></i></a>
-        <button type="submit" class="btn-large light-green darken-1">
-        Done<i class="fas fa-edit right"></i>
-        </button>
-        </div>
-        </div>
-	</form>
 </div>
+
 
 {% endblock %}
