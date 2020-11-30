@@ -20,6 +20,18 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/homepage")
+def homepage():
+    books = list(mongo.db.books.find())
+    return render_template("home.html", books=books)
+
+
+@app.route("/book_details/<book_id>")
+def book_details(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template("book_details.html", book=book)
+
+
 @app.route("/browse_books")
 def browse_books():
     books = list(mongo.db.books.find())

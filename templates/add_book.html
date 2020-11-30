@@ -1,65 +1,61 @@
 {% extends "base.html" %} 
 {% block content %}
 
-<h3 class="light-green-text text-darken-1 center-align">Add Books</h3>
+<div class="container">
 
-<div class="row card-panel light-grey">
-	<form class="col s12" method="POST" action="{{ url_for('add_book')}}">
-    <div class="row">
-		<div class="input-field col s12">
 
-    <select id="list_name" name="list_name" class="validate" required>
+<h3 class="text-center">Add Books</h3>
+
+<div class="row">
+<form class="col col-xs col-sm col-md-8 needs-validation" method="POST" action="{{ url_for('add_book')}}">
+    <select id="list_name" name="list_name" class="validate custom-select" required>
       <option value="" disabled selected>Choose List</option>
       {% for list in lists %}
       <option value="{{ list.list_name }}">{{ list.list_name }}</option>
       {% endfor %}
     </select>
-    <label for="list_name">Book List</label>
-  </div>
-    </div>
-    <div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+  
+<div class="form-group">
+				<i class="fas fa-pencil"></i>
 				<input id="book_name" name="book_name" type="text" class="validate" required/>
 				<label for="book_name">Book Name</label>
-			</div>
+		
 		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-user-circle prefix light-green-text text-darken-1"></i>
+		<div class="form-group">
+			
+				<i class="fas fa-user-circle prefix"></i>
 				<input id="author" name="author" type="text" class="validate" required/>
 				<label for="author">Author</label>
-			</div>
+			
 		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+		<div class="form-group">
+			
+				<i class="fas fa-pencil prefix "></i>
 				<input id="keywords" name="keywords" type="text" class="validate" required/>
 				<label for="keywords">Keywords</label>
-			</div>
+			
 		</div>
-        <div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
+        <div class="form-group">
+			
+				<i class="fas fa-pencil"></i>
 				<input id="book_image" name="book_image" type="text" placeholder="(please provide the link for image if you have one)"/>
 				<label for="book_image">Book Image</label>
-			</div>
+			
 		</div>
-		<div class="row">
-			<div class="input-field col s12">
+		<div class="form-group">
+			
 				<i class="fas fa-pencil prefix light-green-text text-darken-1"></i>
 				<textarea id="description" name="description" class="materialize-textarea"></textarea>
 				<label for="description">Description</label>
-			</div>
+			
 		</div>
-        <div class="row">
-        <div class="col s12 center-align">
         <button type="submit" class="btn-large light-green darken-1">
-        Add a book <i class="fas fa-plus-square right"></i>
+        Add a book <i class="fas fa-plus-square"></i>
         </button>
-        </div>
-        </div>
-	</form>
+    
+</form>
+</div>
+
 </div>
 
 {% endblock %}
