@@ -1,11 +1,31 @@
 {% extends "base.html" %} 
 {% block content %}
 
-<h3 class="light-green-text text-darken-1 center-align">Add List</h3>
+<div class="container m-4">
+  <h3 class="text-center">Add Your List</h3>
 
-<div class="row card-panel light-grey">
-	<form class="col s12" method="POST" action="{{ url_for('add_list')}}">
-    <!-- list name -->
+  <div class="row center">
+    <form
+      class="col col-xs col-sm col-md-8 needs-validation"
+      method="POST"
+      action="{{ url_for('add_list')}}"
+    >
+
+ <div class="form-group">
+
+        <label for="list_name">List Name</label>
+        <input
+          id="list_name"
+          name="list_name"
+          type="text"
+          class="form-control"
+          placeholder="name of the list"
+          novalidate
+          required
+        />
+        
+      </div>
+    <!-- list name 
         <div class="row">
 		<div class="input-field col s12">
             <i class="fas fa-folder-open prefix light-green-text text-darken-1"></i>
@@ -13,14 +33,22 @@
             <label for="list_name">List Name</label>
         </div>
         </div>
+
+    
 		
         <div class="row">
         <div class="col s12 center-align">
         <button type="submit" class="btn-large light-green darken-1">
-        Add a book <i class="fas fa-plus-square right"></i>
+        Add a list <i class="fas fa-plus-square right"></i>
         </button>
         </div>
         </div>
+
+        -->
+
+         <button type="submit" class="btn-large btn-light">
+        Add a list <i class="fas fa-plus-square"></i>
+      </button>
 	</form>
 </div>
 
