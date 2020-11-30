@@ -114,9 +114,24 @@
       {% with messages = get_flashed_messages() %} 
       {% if messages %} 
       {% for message in messages %}
+<!-- 
+<div class="toast" id="toast" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="static/favicon/favicon-16x16.png" class="rounded mr-2" alt="">
+    <strong class="mr-auto"></strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    {{ message }}
+  </div>
+</div>
+-->
+
       <div class="container">
-        <div class="row alert-success">
-          <h4 class="light-green darken-1 center-align">{{ message }}</h4>
+        <div class="row alert-secondary">
+          <h4 class="">{{ message }}</h4>
         </div>
       </div>
 
