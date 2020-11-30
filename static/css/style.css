@@ -13,7 +13,7 @@ font-weight: bold;
 
 
 
-.book-details-card {
+.center {
     display: flex;
     justify-content: center;
 }
