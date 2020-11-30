@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
 
-*body {
-    height: 100vh;
-}
-
 .heading {
 color: black;
 margin: 0 auto;
@@ -37,7 +33,7 @@ font-weight: bold;
 }
 
 .form-container {
-    height: 50vw;
+    height: 60vw;
 }
 
 footer {
