@@ -11,8 +11,6 @@ font-weight: bold;
     background-image: url(https://images.unsplash.com/photo-1495871682630-20d8a7245ef5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
 }
 
-
-
 .center {
     display: flex;
     justify-content: center;
@@ -32,10 +30,6 @@ font-weight: bold;
     margin: 0% 0% 0% 3%;
     padding: 6% 0%;
     height: 20vw;
-}
-
-.add-book-bg {
-    background-color: grey;
 }
 
 footer {
@@ -60,7 +54,7 @@ footer {
   line-height: 15px;
   text-align: center;
   color: #fafafa;
-  background: lightgreen;
+  background: grey;
   transition: all 0.35s ease-in-out;
   -moz-transition: all 0.35s ease-in-out;
   -webkit-transition: all 0.35s ease-in-out;
@@ -68,5 +62,5 @@ footer {
 }
 
 .social-links li a i:hover {
-  background: #6db9d9;
+  background: black;
 }
