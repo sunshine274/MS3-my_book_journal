@@ -7,8 +7,7 @@ font-family: 'Castoro', serif;
 }
 
 .jumbotron {
-    background-image: url(https://images.unsplash.com/photo-1554896541-dff010081afe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1349&q=80);
-    filter: grayscale(60%);
+    background-image: url(https://images.unsplash.com/photo-1495871682630-20d8a7245ef5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
 }
 
 .card-img {
@@ -24,6 +23,10 @@ font-family: 'Castoro', serif;
 .card-body {
     margin: 0% 0% 0% 3%;
     padding: 6% 0%;
+}
+
+.add-book-bg {
+    background-color: grey;
 }
 
 footer {
