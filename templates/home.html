@@ -18,10 +18,12 @@
 <!-- Jumbotron -->
 
 <div class="container">
-
-<h3 class="heading text-center">
+ <div class="row py-4">
+ <h3 class="heading text-center">
   Recommended Books
 </h3>
+ </div>
+
 
 
 <!-- book card -->
@@ -34,7 +36,7 @@
     <div class="card mb-4">
 <!-- card image -->
     <div class="view overlay">
-    <img src="{{ book.book_image }}" class="img-fluid card-img card-img-top" onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
+    <img src="{{ book.book_image }}" class="img-fluid card-img card-img-top" onerror="this.src='static/images/default-img.png';this.classname='img-fluid'"/>
      <a href="#!">
      <div class="mask rgba-white-slight"></div>
      </a>

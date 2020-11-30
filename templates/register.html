@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container m-4">
-  <h3 class="text-center">Add Books</h3>
+<div class="container m-4 form-container">
+  <h3 class="heading text-center">Register</h3>
 
   <div class="row center">
     <form
@@ -9,9 +9,7 @@
       method="POST"
       action="{{ url_for('register')}}"
     >
-
-<div class="form-group">
-
+      <div class="form-group">
         <label for="username">Userame</label>
         <input
           id="username"
@@ -21,43 +19,33 @@
           placeholder="username"
           required
         />
-        
       </div>
 
-<div class="form-group">
-
+      <div class="form-group">
         <label for="password">Password</label>
         <input
           id="password"
           name="password"
-          type="text"
+          type="password"
           class="validate form-control"
           placeholder="password"
           required
         />
-        
       </div>
 
-
-
       <!-- button -->
-    
-        <button type="submit" class="btn-large btn-light">
-          Register <i class="fas fa-sign-in"></i>
-        </button>
-     
-  </form>
-</div>
 
-<div class="row">
-  <div class="col s12">
-    <p class="center-align">
-      Already have an account?
-      <a href="{{ url_for('login') }}" class="light-green-text text-darken-1"
-        >Log In</a
+      <button type="submit" class="btn-large btn-light">
+        Register <i class="fas fa-sign-in"></i>
+      </button>
+
+      <span
+        >Already have an account?
+        <a href="{{ url_for('login') }}">Log In</a></span
       >
-    </p>
+    </form>
   </div>
 </div>
 
-{% endblock %}
+  {% endblock %}
+

@@ -1,46 +1,50 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container">
+  <div class="row center mb-4">
+    <div class="col col-xs-12 col-sm-6 col-md-6">
+      <!-- card -->
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="{{ book.book_image }}"
+              class="img-fluid card-img"
+              onerror="this.src='static/images/default-img.png';this.classname='img-fluid'"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.book_name }}</h5>
+              <p class="card-text">
+                Author : <strong>{{ book.author }}</strong>
+              </p>
+              <p class="card-text">
+                <em>Added by: {{ book.created_by| capitalize }}</em>
+              </p>
+              <p class="card-text">Tags: {{ book.keywords }}</p>
 
-<div class="row center mb-4">
-  <div class="col col-xs-12 col-sm-6 col-md-6">
-  <!-- card -->
-    <div class="card">
-<!-- card image -->
-    <div class="view overlay">
-    <img src="{{ book.book_image }}" class="img-fluid card-img card-img-top" onerror="this.src='static/images/default_img.png';this.classname='img-fluid'"/>
-     <a href="#!">
-     <div class="mask rgba-white-slight"></div>
-     </a>
-    </div>
-    <!-- card content -->
-         <div class="card-body">
-         <!-- card title -->
-        <h5 class="card-title">{{ book.book_name }}</h5>
-        <p>Author : {{ book.author }}</p>
-        <p><em>Added by: {{ book.created_by| capitalize }}</em></p>
-        <p>Tags: {{ book.keywords }}</p>
-        <p>Description: {{ book.description }}</p>
-        {% if session.user|lower == book.created_by|lower %}
-        <a
-          href="{{ url_for('delete_book', book_id=book._id)}}"
-          class="btn btn-primary"
-          >Delete</a
-        >
-        <a
-          href="{{ url_for('edit_book', book_id=book._id)}}"
-          class="btn btn-success"
-          >Edit</a
-        >
-        {% endif %}
-        <a href="{{ url_for('add_book')}}" class="btn btn-primary btn-md">Add to my book list</a>
+              {% if session.user|lower == book.created_by|lower %}
+              <a
+                href="{{ url_for('delete_book', book_id=book._id)}}"
+                class="btn btn-primary"
+                >Delete</a>
+              <a
+                href="{{ url_for('edit_book', book_id=book._id)}}"
+                class="btn btn-success"
+                >Edit</a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- card -->
   </div>
 
-</div>
+  <div class="row">
+    <p><strong>Description:</strong>{{ book.description }}</p>
+  </div>
 </div>
 
 {% endblock %}

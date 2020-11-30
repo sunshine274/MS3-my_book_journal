@@ -32,12 +32,6 @@ def book_details(book_id):
     return render_template("book_details.html", book=book)
 
 
-@app.route("/browse_books")
-def browse_books():
-    books = list(mongo.db.books.find())
-    return render_template("books.html", books=books)
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -83,7 +77,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("my_lists", username=session["user"]))
+                    return redirect(url_for("homepage", username=session["user"]))
             else:
                 # invalid Username and/or password
                 flash("incorrect Username and/or password")
@@ -132,7 +126,7 @@ def add_book():
         }
         mongo.db.books.insert_one(book)
         flash("Book successfully added!")
-        return redirect(url_for("browse_books"))
+        return redirect(url_for("homepage"))
 
     lists = mongo.db.lists.find().sort("list_name", 1)
     return render_template("add_book.html", lists=lists)
@@ -152,18 +146,18 @@ def edit_book(book_id):
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book successfully updated!")
-        return redirect(url_for("browse_books"))
+        return redirect(url_for("homepage"))
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     lists = mongo.db.lists.find().sort("list_name", 1)
-    return render_template("edit_book.html", book=book, lists=lists)
+    return render_template("home.html", book=book, lists=lists)
 
 
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book successfully deleted!")
-    return redirect(url_for("browse_books"))
+    return redirect(url_for("homepage"))
 
 
 @app.route("/get_lists")
