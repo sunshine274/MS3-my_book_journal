@@ -39,6 +39,8 @@ This is my MS3 project mainly built to deepen and demonstrate my skills in Pytho
 
 ### Frameworks, Libraries & Programs Used
 
+1. [MongoDB:](https://www.mongodb.com/)
+
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
@@ -101,12 +103,12 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   Other books properties are from [Amazon](https://www.amazon.co.uk) 
 
--   image for jumbotron is from [Unsplash](https://unsplash.com/photos/s-ImNJWdHrI)
+
 -   README.md modified from Code Institute [sample](https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md)
 
 ### Media
 
--   All Images were created by the developer.
+-   image for jumbotron is from [Unsplash](https://unsplash.com/photos/s-ImNJWdHrI)
 
 ### Acknowledgements
 
