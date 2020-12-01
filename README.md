@@ -2,7 +2,9 @@
 
 [View the live project here.](https://ms3-my-book-journal.herokuapp.com/)
 
-This is my MS3 project mainly built to deepen and demonstrate my skills in Python and MongoDB etc. The original user stories are not yet fulfilled with a tight constraint of time. Yet it could be developed into a handy app in the future to work as a personal e-journal to organise books into different lists. 
+This is my MS3 project mainly built to deepen and demonstrate my skills in Python and MongoDB etc. The original user stories are not yet fulfilled with a tight constraint of time. Yet it could be developed into a handy app in the future to work as a personal e-journal to organise books into different lists.
+
+Currently new users can register and login their account to add/edit/delete a book, and to add a new list name. However, only admin users can edit or delete a list name, and this edit/delete functionality has not yet been developed fully, hence still under construction.
 
 <h2 align="center"><img src="static/images/mockup.png"></h2>
 
@@ -20,9 +22,9 @@ This is my MS3 project mainly built to deepen and demonstrate my skills in Pytho
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://share.balsamiq.com/c/qccVrjQfGRKRmkidGsA24B.png)
+    -   Home Page Wireframe - [View](static/images/homepage.png)
 
-    -   Book details page Wireframe - [View](https://share.balsamiq.com/c/qR1WQWwKZJtwaRzHnGodh7.png)
+    -   Book details page Wireframe - [View](static/images/book-details.png)
 
 ## Features
 
