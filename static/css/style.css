@@ -44,10 +44,13 @@ font-weight: bold;
 footer {
   background-color: lightgrey;
   color: white;
-  min-height: 80px;
+  min-height: 70px;
   margin: 0;
   text-align: center;
   padding-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .socil-links {
