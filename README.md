@@ -84,9 +84,9 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   The Website was tested on Google Chrome, Microsoft Edge and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 
-### Known Bugs
+### For further improvements
 
--   Some functionalities are not yet displayed, e.g. edit lists. 
+-   Some functionalities are not yet displayed, e.g. edit/delete lists, because they're still exclusive to the admin user only; however, in the future these functionalities should be open to every user for them to manage their own lists conveniently.
 
 ## Deployment
 
