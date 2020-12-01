@@ -6,7 +6,7 @@ This is my MS3 project mainly built to deepen and demonstrate my skills in Pytho
 
 Currently new users can register and login their account to add/edit/delete a book, and to add a new list name. However, only admin users can edit or delete a list name, and this edit/delete functionality has not yet been developed fully, hence still under construction.
 
-<h2 align="center"><img src="static/images/mockup.png"></h2>
+<h2 align="center"><img src="static/images/mock-up.png"></h2>
 
 ## User Experience (UX)
 
@@ -87,6 +87,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ### For further improvements
 
 -   Some functionalities are not yet displayed, e.g. edit/delete lists, because they're still exclusive to the admin user only; however, in the future these functionalities should be open to every user for them to manage their own lists conveniently.
+-   Flash messages need further styling, possibly using Bootstrap toasts.
+-   Currently users do not receive comfirmation message before deleting a book/list, however, it should be added for essential protection.
 
 ## Deployment
 
