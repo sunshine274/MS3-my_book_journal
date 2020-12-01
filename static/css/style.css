@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
 
+html,
+body {
+  height: 100%;
+}
+
 .heading {
 color: black;
 margin: 0 auto;

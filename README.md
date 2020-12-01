@@ -15,6 +15,8 @@ This is my MS3 project mainly built to deepen and demonstrate my skills in Pytho
         1. As a user, I want to easily understand how to use this book journal website.
         2. As a user, I want to be able to easily navigate throughout the site to realise different functionalities.
         3. As a user, I want to easily understand how to use this website to add books into different lists to organise my interested books.
+        4. As a user, I want to be able to search for a book.
+        5. As a user, I want to be able to browse existing books.
 
 *   ### Wireframes
 
@@ -40,6 +42,7 @@ This is my MS3 project mainly built to deepen and demonstrate my skills in Pytho
 ### Frameworks, Libraries & Programs Used
 
 1. [MongoDB:](https://www.mongodb.com/)
+    - MongoDB was used to store and manipulate data.
 
 1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
